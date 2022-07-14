@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no" />
+<meta name="title" content="Survey form">
+<meta name="keywords" content="survey, survey form, feedback form, feedback, satisfaction form, google forms, survey monkey, forms, googleforms, bootstrap 4, bootstrap, responsive, survey form template, bootstrap forms, survey form google, survey form sample, bootstrap 4 forms, google survey, questionnaire, questionnaire form, paid surveys, company survey, take survey, fill survey, download, free download, surveysavvy, customer satisfaction, create a survey, product feedback form, product form, forms, ordnance survey, make money online, questionnaire template, google questionnaire, survey format, survey feedback, survey form html, survey form format, ajax, wizard form, survey wizard, multipurpose form, client satisfaction survey, customer survey, employee survey"/>
+<meta name="description" content="Online survey taking form. Survey form for clients, customers, employees, business, product, job, student satisfaction. By using our survey form, you’ll get actionable data you can count on."/>
+<meta name="subject" content="Feedback form"/>
+<meta name="copyright" content="Uneekcc1"/>
+<meta name="og:title" content="Survey form"/>
+<meta name="og:type" content="survey"/>
+<meta name="og:description" content="Online survey taking form. Survey form for clients, customers, employees, business, product, job, student satisfaction. By using our survey form, you’ll get actionable data you can count on."/>
+<title>Survey form</title>
+
+<!--Font-->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!--bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!--select-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+<!--Additional styling-->
+<link rel="stylesheet" href="{% static 'survey/common/component.css' %}">
+</head>
+
+<body>
+<div class="container py-5">
+  <div class="row justify-content-between"> 
+    <!--main content-->
+    
+    <div class="col-xl-6 col-lg-6 d-none d-xl-block"> <img class="mb-2" src="{% static 'survey/common/images/kel.png' %}" width="40%" alt="survey form">
+      <div> Knowledge Engineering Laboratory (KEL) belongs to the Department of Computer Science and Engineering at Chung-Ang University [1] in Korea. It has extensive experience with data mining, semantic technologies, and recommendation systems. The main research topic is on the computational processes of discovering meaningful patterns from various domains through intelligent methods (e.g., artificial intelligence, machine learning, statistics, and database systems). </div>
+    </div>
+    
+    <!--form block-->
+    <div class="col-xl-5 col-lg-5 lng-width"> 
+      <!--form start-->
+      <form id="example-form" autocomplete="off" method="post" action="{% url 'survey:submit' %}">
+        {% csrf_token %}
+        <div id="wizard"> 
+          
+          <!--STEP 1-->
+          <h3></h3>
+          <section>
+            <div class="content-wrapper">
+			  <!--HEADER with ERROR block-->
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <h6>중앙대학교 KEL</h6>
+                </div>
+                <div class="col-md-6 mb-3"><span class="errorblock"></span></div>
+              </div>
+			  <!--INPUT FIELDS-->
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="fname" class="has-float-label">
+                    <input type="text" name="name" id="fname" class="form-control" placeholder=" " required>
+                    <span>Name</span> </label>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label for="pnumber" class="has-float-label">
+                    <input type="tel" name="age" id="pnumber" class="form-control" placeholder=" " required>
+                    <span>Age</span> </label>
+                </div>
+              </div>
+
+				
+				<p class="mb-0">중앙대학교 지식공학 연구실<br>Knowledge Engineering Laboratory</p>
+				
+            </div>
+          </section>
+          
+          <!--STEP 2-->
+          <h3></h3>
+          <section>
+            <div class="content-wrapper">
+              <div class="row mb-3">
+                <div class="col-md-8">
+                  <h6>좋아하는 색깔을 선택해주세요 (중복 가능)</h6>
+                </div>
+                <div class="col-md-6 mb-3"><span class="errorblock"></span></div>
+              </div>
+			  <!--RADIO section of service-->
+              <div class="styled-input-container styled-input--square">
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_1" id="question1" />
+                  <label for="question1">빨간색</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_2" id="question2" />
+                  <label for="question2">주황색</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_3" id="question3" />
+                  <label for="question3">노란색</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_4" id="question4" />
+                  <label for="question4">초록색</label>
+                </div>
+	            <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_5" id="question5" />
+                  <label for="question5">파란색</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_6" id="question6" />
+                  <label for="question6">남색</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q1" value="q1_7" id="question7" />
+                  <label for="question7">보라색</label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <h3></h3>
+          <section>
+            <div class="content-wrapper">
+              <div class="row mb-3">
+                <div class="col-md-8">
+                  <h6>좋아하는 영화 장르가 어떻게 되나요? (중복 가능)</h6>
+                </div>
+                <div class="col-md-6 mb-3"><span class="errorblock"></span></div>
+              </div>
+			  <!--RADIO section of service-->
+              <div class="styled-input-container styled-input--square">
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_1" id="question2_1" />
+                  <label for="question2_1">액션</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_2" id="question2_2" />
+                  <label for="question2_2">애니메이션</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_3" id="question2_3" />
+                  <label for="question2_3">범죄</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_4" id="question2_4" />
+                  <label for="question2_4">드라마</label>
+                </div>
+	            <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_5" id="question2_5" />
+                  <label for="question2_5">코미디</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_6" id="question2_6" />
+                  <label for="question2_6">멜로/로맨스</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_7" id="question2_7" />
+                  <label for="question2_7">스릴러</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_8" id="question2_8" />
+                  <label for="question2_8">SF</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q2" value="q2_9" id="question2_9" />
+                  <label for="question2_9">판타지</label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- -->
+          <h3></h3>
+          <section>
+            <div class="content-wrapper">
+              <div class="row mb-3">
+                <div class="col-md-8">
+                  <h6>좋아하는 가수가 누군가요? (중복 가능)</h6>
+                </div>
+                <div class="col-md-6 mb-3"><span class="errorblock"></span></div>
+              </div>
+			  <!--RADIO section of service-->
+              <div class="styled-input-container styled-input--square">
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_1" id="question3_1" />
+                  <label for="question3_1">임영웅</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_2" id="question3_2" />
+                  <label for="question3_2">(여자)아이들</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_3" id="question3_3" />
+                  <label for="question3_3">방탄소년단</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_4" id="question3_4" />
+                  <label for="question3_4">IVE</label>
+                </div>
+	            <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_5" id="question3_5" />
+                  <label for="question3_5">싸이</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_6" id="question3_6" />
+                  <label for="question3_6">빅뱅</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_7" id="question3_7" />
+                  <label for="question3_7">세븐틴</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_8" id="question3_8" />
+                  <label for="question3_8">아이유</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_9" id="question3_9" />
+                  <label for="question3_9">태연</label>
+                </div>
+                <div class="styled-input-single">
+                  <input type="checkbox" name="q3" value="q3_10" id="question3_10" />
+                  <label for="question3_10">멜로망스</label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+
+          <!--STEP 3-->
+
+          
+          <!--STEP 4-->
+          <h3></h3>
+          <section>
+            <div class="content-wrapper"> 
+              <!--input data review-->
+              <div id="FormSummary">
+                <h6> Personal Details</h6>
+                <p class="mb-0">Name : <span id="summaryfname"></span> <span id="summarylname"></span></p>
+                <p class="mb-0">Contact : <span id="summarypnumber"></span></p>
+                <p class="mb-0">Email : <span id="summaryemail"></span></p>
+                <p class="mb-0">Message : <span id="summarymessage1"></span></p>
+                <h6 class="mt-3"> Survey Info</h6>
+                <p class="mb-0">Service Provided : <span id="summaryservice"></span></p>
+                <p class="mb-0">Changes Recommended : <span id="summarymessage2"></span></p>
+                <p class="mb-0">Reference : <span id="summaryref"></span></p>
+                <p class="mb-0">Love to recommend to others? : <span id="summaryrecomm"></span></p>
+                <br>
+                <p class="mb-0">One best thing about the company : <span id="summarylike"></span></p>
+              </div>
+              <br>
+			  <!--offers checkbox-->	
+              <div class="styled-input-container rounded-checkbox">
+                <div class="styled-input-single">
+                  <input type="checkbox" name="offers" value="Yes, subscribed to offers and coupons." id="offers" />
+                  <label for="offers">Receive daily offers and coupons via email ?</label>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div> 
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--jquery library--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+<!--validation library--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js"></script> 
+
+<!--bootstrap library--> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+
+<!--steps library--> 
+<script src="{% static 'survey/common/library/jquery.steps.js' %}"></script>
+
+<!--select library--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> 
+
+<!--custom JS--> 
+<script src="{% static 'survey/spreadsheet-js.js' %}"></script>
+<script src="{% static 'survey/common/main.js' %}"></script>
+
+</body>
+</html>
