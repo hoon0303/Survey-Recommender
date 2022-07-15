@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no"/>
+    <meta name="title" content="Survey form">
+    <meta name="keywords"
+          content="survey, survey form, feedback form, feedback, satisfaction form, google forms, survey monkey, forms, googleforms, bootstrap 4, bootstrap, responsive, survey form template, bootstrap forms, survey form google, survey form sample, bootstrap 4 forms, google survey, questionnaire, questionnaire form, paid surveys, company survey, take survey, fill survey, download, free download, surveysavvy, customer satisfaction, create a survey, product feedback form, product form, forms, ordnance survey, make money online, questionnaire template, google questionnaire, survey format, survey feedback, survey form html, survey form format, ajax, wizard form, survey wizard, multipurpose form, client satisfaction survey, customer survey, employee survey"/>
+    <meta name="description"
+          content="Online survey taking form. Survey form for clients, customers, employees, business, product, job, student satisfaction. By using our survey form, you’ll get actionable data you can count on."/>
+    <meta name="subject" content="Feedback form"/>
+    <meta name="copyright" content="Uneekcc1"/>
+    <meta name="og:title" content="Survey form"/>
+    <meta name="og:type" content="survey"/>
+    <meta name="og:description"
+          content="Online survey taking form. Survey form for clients, customers, employees, business, product, job, student satisfaction. By using our survey form, you’ll get actionable data you can count on."/>
+    <title>Survey form</title>
+
+
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!--select-->
+
+
+    <!--Additional styling-->
+    <link rel="stylesheet" href="{% static 'survey/common/common.css' %}">
+    <link rel="stylesheet" href="{% static 'survey/common/component.css' %}">
+    <!--jquery library-->
+
+
+    <!--validation library-->
+
+
+    <!--bootstrap library-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+
+    <!--steps library-->
+
+    <!--select library-->
+
+
+    <!--custom JS-->
+    <script src="{% static 'survey/spreadsheet-js.js' %}"></script>
+    <script src="{% static 'survey/common/main.js' %}"></script>
+</head>
+
+<body>
+<div class="container py-5">
+    <div class="row justify-content-between">
+        <!--main content-->
+
+        <div class="col-xl-6 col-lg-6 d-none d-xl-block"><img class="mb-2"
+                                                              src="{% static 'survey/common/images/kel.png' %}"
+                                                              width="40%" alt="survey form">
+            <div> Knowledge Engineering Laboratory (KEL) belongs to the Department of Computer Science and Engineering
+                at Chung-Ang University [1] in Korea. It has extensive experience with data mining, semantic
+                technologies, and recommendation systems. The main research topic is on the computational processes of
+                discovering meaningful patterns from various domains through intelligent methods (e.g., artificial
+                intelligence, machine learning, statistics, and database systems).
+            </div>
+        </div>
+
+        <!--form block-->
+        <div class="col-xl-5 col-lg-5 lng-width">
+            <!--form start-->
+            <div class="user-data m-b-30">
+                <h3 class="title-3 m-b-30">
+                    <i class="zmdi zmdi-account-calendar"></i>Survey Result (<a href="/">survey</a>)</h3>
+                <div class="filters m-b-45">
+                    <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+
+
+                        <form method="post" action="" class="form" style="margin-left: 10%; margin-top: 5%;">
+                            {% csrf_token %}
+                            <select name="month" id="id_month" >
+
+
+                                {% for user in users %}
+                                    <<option value="{{user}}">{{user}}</option>
+                                {% endfor %}s
+
+                            </select>
+                        </form>
+
+                        <script>
+    $(document).ready(function() {
+        $( "select[name=month]" ).val( "{{ month_text }}" );
+        $('select[name=month]').change(function () {
+        console.log($('select[name=month]').val());
+        month = $('select[name=month]').val();
+        $('.form').submit();
+    });
+});
+
+                        </script>
+
+                        <!--
+                        <form id="choice_user" method="post" action="{% url 'survey:result' %}">
+                            {% csrf_token %}
+                            <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                   id="dropdownMenuLink"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    User Choice
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    {% for user in users %}
+                                    <a class="dropdown-item" href="#"
+                                       onclick="document.getElementById('choice_user').submit();" name="user_list"
+                                       value="{{user}}">{{user}}</a>
+                                    {% endfor %}s
+                                </div>
+                            </div>
+                        </form>
+                        -->
+                        <div class="dropDownSelect2"></div>
+                    </div>
+                    <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+
+                        <div class="dropDownSelect2"></div>
+                    </div>
+                </div>
+                <div class="table-responsive table-data">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>
+                                <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                </label>
+                            </td>
+                            <td>name</td>
+                            <td>work</td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                        {% for i in list %}
+                        <tr>
+                            <td>
+                                <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <div class="table-data__info">
+                                    <h6>{{i}}</h6>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="role member">student</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

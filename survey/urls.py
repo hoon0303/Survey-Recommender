@@ -8,6 +8,7 @@ app_name = 'survey'
 
 urlpatterns = [
     path('submit', submit, name='submit'),
+    path('result', result, name='result'),
     path('', landing),
 
 ]
