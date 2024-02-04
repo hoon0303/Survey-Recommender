@@ -1,2 +1,2 @@
 # Survey Recommender
-The Survey Recommender is a system that recommends friends with similar interests to students on a tour of the Knowledge Engineering Lab. It uses responses to survey questions to match students based on their shared tendencies and interests.
+The Survey Recommender is a system designed to recommend friends with similar interests to students touring the Knowledge Engineering Lab. It utilizes survey question responses to match students based on their shared tendencies and interests.
