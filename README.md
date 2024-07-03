@@ -2,6 +2,11 @@
 
 The Survey Recommender is a system designed to recommend friends with similar interests to students touring the Knowledge Engineering Lab. It utilizes survey question responses to match students based on their shared tendencies and interests.
 
+## Features
+- **Survey-Based Matching**: Uses survey responses to match students with similar interests.
+- **User-Friendly Interface**: Simple and intuitive UI for easy navigation.
+- **Real-Time Recommendations**: Provides instant friend recommendations based on survey results.
+
 ## Project Structure
 
 ```plaintext
@@ -23,11 +28,6 @@ Survey-Recommender-main
             ├── index.html            # Survey input form template
             └── result.html           # Recommendation results page template
 ```
-
-## Features
-- **Survey-Based Matching**: Uses survey responses to match students with similar interests.
-- **User-Friendly Interface**: Simple and intuitive UI for easy navigation.
-- **Real-Time Recommendations**: Provides instant friend recommendations based on survey results.
 
 ## Demo
 ### Main Page
