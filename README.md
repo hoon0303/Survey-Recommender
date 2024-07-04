@@ -38,4 +38,3 @@ Survey-Recommender-main
 
 ### Result Page
 <img src="https://github.com/hoon0303/Survey-Recommender/assets/53135286/e89b4397-0a7e-4020-9a6e-e9b0c39baaaf" alt="Result Page" width="650">
-
